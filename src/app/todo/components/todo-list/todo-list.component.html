@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="title">
+    <span class="mat-display-1">Todo</span>
+    <div>
+      <button mat-fab color="primary" routerLink="/todo/create">
+        <mat-icon>create</mat-icon>
+      </button>
+    </div>
+  </div>
+  <mat-card *ngFor="let todo of todos$ | async" class="example-card">
+    <mat-card-title>{{ todo.title }}</mat-card-title>
+    <mat-card-subtitle>{{ todo.description }}</mat-card-subtitle>
+    <mat-card-actions>
+      <div class="actions-container">
+        <button mat-mini-fab color="warn" (click)="deleteTodo(todo.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary" [routerLink]="[todo.id]">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+  <div class="dialog" *ngIf="(todos$ | async)!.length < 1">
+    <span class="mat-display-3">NO TODOS</span>
+  </div>
+</div>

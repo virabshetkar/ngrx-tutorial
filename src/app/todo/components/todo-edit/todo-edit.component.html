@@ -1,0 +1,5 @@
+<app-todo-form
+  title="Edit Todo"
+  (formSubmit)="updateTodo($event)"
+  [todo]="(todo$ | async) || undefined"
+></app-todo-form>

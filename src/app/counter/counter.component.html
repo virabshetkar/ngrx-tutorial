@@ -1,0 +1,16 @@
+<div class="container">
+  <mat-card
+    ><h1>{{ value$ | async }}</h1>
+    <div class="actions">
+      <button mat-mini-fab color="primary" (click)="increase()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-mini-fab color="primary" (click)="descrease()">
+        <mat-icon>remove</mat-icon>
+      </button>
+      <button mat-mini-fab color="warn" (click)="reset()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+</div>

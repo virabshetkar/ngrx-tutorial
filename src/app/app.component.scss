@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.active-link {
+  background-color: whitesmoke;
+  color: black;
+}

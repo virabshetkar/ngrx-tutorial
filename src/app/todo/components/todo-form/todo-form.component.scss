@@ -1,0 +1,19 @@
+.container {
+  padding: 3em;
+}
+
+.form-container {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 3em;
+  background-color: #222;
+  min-width: 400px;
+  max-width: 500px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+}
