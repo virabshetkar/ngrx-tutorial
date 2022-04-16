@@ -5,10 +5,7 @@ import { Observable } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
 import { Todo } from '../../../core/models/todo.model';
 import { updateTodo } from '../../../core/store/todo/todo.actions';
-import {
-  todoSelector,
-  todoSelector2,
-} from '../../../core/store/todo/todo.selectors';
+import { todoSelector } from '../../../core/store/todo/todo.selectors';
 
 @Component({
   selector: 'app-todo-edit',
@@ -26,7 +23,7 @@ export class TodoEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.todo$ = this.activeRoute.params.pipe(
-      switchMap((params) => this.store.select(todoSelector2, +params['todoId']))
+      switchMap((params) => this.store.select(todoSelector(+params['todoId'])))
     );
   }
 
