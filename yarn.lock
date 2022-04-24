@@ -241,6 +241,13 @@
   dependencies:
     tslib "^2.3.0"
 
+"@angular/service-worker@~13.3.0":
+  version "13.3.3"
+  resolved "https://registry.yarnpkg.com/@angular/service-worker/-/service-worker-13.3.3.tgz#8f8f4261bf49e5c8e8801c8595d69ae6c135f23b"
+  integrity sha512-f0O2HzYwGU5WRjc3AjlaGqL5glHDfi3G7zzBy8HFGjP33UsuvqkLTkKv34Nh16gckcfpfasd2H6z/edSsP0G8Q==
+  dependencies:
+    tslib "^2.3.0"
+
 "@assemblyscript/loader@^0.10.1":
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/@assemblyscript/loader/-/loader-0.10.1.tgz#70e45678f06c72fa2e350e8553ec4a4d72b92e06"
@@ -1236,6 +1243,20 @@
   dependencies:
     tslib "^2.0.0"
 
+"@ngrx/entity@13.1.0":
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-13.1.0.tgz#52d200a91d4677f144952175e02286779705c90d"
+  integrity sha512-G4eGDbKIy0sxs0ilA/D2q/aWo5GY39LrJhiLPgAYSNPllSSt3vUhBkihHni91nxtuk+HJ0eGbEHgfFlu6ruhVA==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/router-store@13.1.0":
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/router-store/-/router-store-13.1.0.tgz#dee6951ecc44c591475920e571d352600e0eddc0"
+  integrity sha512-K1ZES0jjv0JhTillJmEZmkZGzu+FU70MQCnKDr9LCFlNon0bufV/YyrsXRIdKkgudmvB4W9rWca8j6eGDHf1Bw==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngrx/store-devtools@13.1.0":
   version "13.1.0"
   resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-13.1.0.tgz#2bea7d6e4e0e85f23062ff07068e4640f59abf70"
@@ -1534,6 +1555,11 @@
   integrity sha512-f0KEEe05NvUnat+boPTZ0dgaLZ4SfSouXUgv5noUiefG2ajgKjmETo9ZJyuqsl7dfl2aHlLJUiki6B4ZYldiiw==
   dependencies:
     "@types/node" "*"
+
+"@types/uuid@^8.3.4":
+  version "8.3.4"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.4.tgz#bd86a43617df0594787d38b735f55c805becf1bc"
+  integrity sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==
 
 "@types/ws@^8.2.2":
   version "8.5.3"

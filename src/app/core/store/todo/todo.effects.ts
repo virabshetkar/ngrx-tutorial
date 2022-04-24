@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Actions, createEffect, Effect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs/operators';
 import { reset } from '../counter/counter.actions';
-import { TodoActions } from './todo.actions';
+import { createTodo, createTodoSuccess, TodoActions } from './todo.actions';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class TodoEffects {
   loadMovies$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(TodoActions.CREATE),
-      map(() => reset())
+      ofType(createTodo),
+      map((data) => {
+        const newData = { ...data.data, id: uuidv4() };
+        return createTodoSuccess({ data: newData });
+      })
     )
   );
 

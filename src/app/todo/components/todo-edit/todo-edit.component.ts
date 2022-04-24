@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { getSelectors } from '@ngrx/router-store';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { Todo } from '../../../core/models/todo.model';
 import { updateTodo } from '../../../core/store/todo/todo.actions';
 import { todoSelector } from '../../../core/store/todo/todo.selectors';
@@ -13,22 +14,16 @@ import { todoSelector } from '../../../core/store/todo/todo.selectors';
   styleUrls: ['./todo-edit.component.scss'],
 })
 export class TodoEditComponent implements OnInit {
-  todo$?: Observable<Todo | undefined>;
+  todo$?: Observable<Todo | undefined> = this.store
+    .select(todoSelector)
+    .pipe(filter((x) => x !== undefined));
 
-  constructor(
-    private store: Store,
-    private activeRoute: ActivatedRoute,
-    private router: Router
-  ) {}
+  constructor(private store: Store, private router: Router) {}
 
-  ngOnInit(): void {
-    this.todo$ = this.activeRoute.params.pipe(
-      switchMap((params) => this.store.select(todoSelector(+params['todoId'])))
-    );
-  }
+  ngOnInit(): void {}
 
-  updateTodo(data: Todo) {
-    this.store.dispatch(updateTodo({ data }));
-    this.router.navigate(['todo']);
+  updateTodo(changes: Todo) {
+    const id = changes.id;
+    this.store.dispatch(updateTodo({ data: { id, changes } }));
   }
 }

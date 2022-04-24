@@ -5,6 +5,7 @@ import { Todo } from '../../../core/models/todo.model';
 import { counterSelector } from '../../../core/store/counter/counter.selectors';
 import { deleteTodo } from '../../../core/store/todo/todo.actions';
 import { todosSelector } from '../../../core/store/todo/todo.selectors';
+import { routerNavigatedAction, routerRequestAction } from '@ngrx/router-store';
 
 @Component({
   selector: 'app-todo-list',
@@ -17,7 +18,7 @@ export class TodoListComponent implements OnInit {
   constructor(private store: Store, private router: Router) {}
   ngOnInit(): void {}
 
-  deleteTodo(todoId: number) {
+  deleteTodo(todoId: string) {
     this.store.dispatch(deleteTodo({ todoId }));
     this.router.navigate(['todo']);
   }

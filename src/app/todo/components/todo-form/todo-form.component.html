@@ -1,10 +1,10 @@
 <div class="container">
-  <form (ngSubmit)="submitForm()" [formGroup]="todoForm">
+  <form (ngSubmit)="submitForm()" [formGroup]="todoForm!">
     <div class="form-container">
       <div class="title">
         <span class="mat-display-1">{{ title }}</span>
         <div>
-          <button mat-icon-button color="warn" routerLink="/todo">
+          <button mat-icon-button color="warn" type="button" routerLink="/todo">
             <mat-icon>close</mat-icon>
           </button>
         </div>

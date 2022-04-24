@@ -9,6 +9,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoCreateComponent } from './components/todo-create/todo-create.component';
 import { TodoEditComponent } from './components/todo-edit/todo-edit.component';
 import { TodoStoreModule } from '../core/store/todo/todo-store.module';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
